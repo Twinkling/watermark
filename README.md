@@ -52,7 +52,7 @@ npm test       # 文档模型、格式、真实解码、ZIP 测试；ZIP 校验�
 | 构建输出目录 | `.pages-dist` |
 | 环境变量 | `NODE_VERSION=24` |
 
-构建时按 `package-lock.json` 安装依赖；无需 API Key、数据库或运行时环境变量。Pages 项目的「自定义域」添加 `watermark.huanxiong.site`，由 Cloudflare 创建指向该 Pages 项目的 CNAME 并签发 HTTPS 证书。后续推送 `main` 自动构建部署。
+构建时按 `package-lock.json` 安装依赖；无需 API Key、数据库或运行时环境变量。Pages 项目的「自定义域」添加 `watermark.huanxiong.site`，由 Cloudflare 创建指向该 Pages 项目的 CNAME 并签发 HTTPS 证书。当前 Pages 已设置 GitHub 来源与 `main` 生产分支，并启用自动部署开关。本次上线使用 Pages API 触发 Git 构建；后续推送的自动触发尚未验证，如未触发，请检查 Cloudflare Pages GitHub App 的仓库授权，并在 Pages 控制台重试部署。
 
 本地检查部署产物：
 
