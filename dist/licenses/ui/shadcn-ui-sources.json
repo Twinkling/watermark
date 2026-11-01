@@ -1,0 +1,97 @@
+{
+  "style": "new-york",
+  "components": [
+    {
+      "name": "button",
+      "url": "https://ui.shadcn.com/r/styles/new-york/button.json",
+      "sha256": "693a319cfb8e0c5fc02d0f50c344cfab0319722844fc72e78bd1b5a7f7786197",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ]
+    },
+    {
+      "name": "input",
+      "url": "https://ui.shadcn.com/r/styles/new-york/input.json",
+      "sha256": "432ba23533631368fec7bb5dbab79f411e6286a8b68e8752da1991809c002d26",
+      "dependencies": []
+    },
+    {
+      "name": "textarea",
+      "url": "https://ui.shadcn.com/r/styles/new-york/textarea.json",
+      "sha256": "aa9716bea5c37db5061656e699d868c7331502de6df5ceb562a28114535d26cd",
+      "dependencies": []
+    },
+    {
+      "name": "dialog",
+      "url": "https://ui.shadcn.com/r/styles/new-york/dialog.json",
+      "sha256": "149c3243e707d110e92122784c17571845275bd174896c6f8fdea63980e49323",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "url": "https://ui.shadcn.com/r/styles/new-york/tooltip.json",
+      "sha256": "6350659c3e70f72d04f1b17c0a2f1d5fe9ec9b516b668778462c6bd9c5eea507",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ]
+    },
+    {
+      "name": "popover",
+      "url": "https://ui.shadcn.com/r/styles/new-york/popover.json",
+      "sha256": "75e60925ee38e1a686a2c990a95a7dae7b72cef447f2d4f1fe8a1aa306a9b1b1",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ]
+    },
+    {
+      "name": "select",
+      "url": "https://ui.shadcn.com/r/styles/new-york/select.json",
+      "sha256": "27c0bdfe81c5ce6496392e899fccdb38f929bcea566ab405bedb06feb8d34699",
+      "dependencies": [
+        "@radix-ui/react-select"
+      ]
+    },
+    {
+      "name": "slider",
+      "url": "https://ui.shadcn.com/r/styles/new-york/slider.json",
+      "sha256": "8f7708c61aa0640172cb8a620f1bcb4c40f4af0fe358d55d4490c3240a9e9d23",
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ]
+    },
+    {
+      "name": "checkbox",
+      "url": "https://ui.shadcn.com/r/styles/new-york/checkbox.json",
+      "sha256": "0c29a891b629472a1d71df4d06fe14bfab4de9d83207f7c0442d161decf15243",
+      "dependencies": [
+        "@radix-ui/react-checkbox"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "url": "https://ui.shadcn.com/r/styles/new-york/collapsible.json",
+      "sha256": "c38039a887ff5629e7cccdd0c7c162c8ded637a8b893e4c9e93048b3aab8ad41",
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "url": "https://ui.shadcn.com/r/styles/new-york/toggle-group.json",
+      "sha256": "047b9e8f739a8fbf55d37b230a0c6f8f260741eb1aa634ee8a1c62333d6ee9d6",
+      "dependencies": [
+        "@radix-ui/react-toggle-group"
+      ]
+    },
+    {
+      "name": "toggle",
+      "url": "https://ui.shadcn.com/r/styles/new-york/toggle.json",
+      "sha256": "4a3acd933605ae0a8518e6783f1fa7cf5c68cfe0ab42cd3cd7968ef9d5b48cb4",
+      "dependencies": [
+        "@radix-ui/react-toggle"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#7160cd" />
+    <meta name="description" content="留印：免费开源的本地图片水印工作台。批量添加文字、Logo 与手写签名，支持 HEIC、TIFF、裁剪调色与 ZIP 导出，图片不上传服务器。" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data: blob:; worker-src blob:; connect-src 'none'; form-action 'none'; base-uri 'none'"
+    />
+    <title>留印 · 本地图片工作台</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dist/ui.css" />
+    <script src="src/core.js" defer></script>
+    <script src="src/formats.js" defer></script>
+    <script src="vendor/codecs.js" defer></script>
+    <script src="vendor/fonts.js" defer></script>
+    <script src="src/decode.js" defer></script>
+    <script src="src/studio.js" defer></script>
+    <script src="src/signature.js" defer></script>
+    <script src="dist/ui.js" defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>请启用 JavaScript，所有处理均在你的设备上完成。</noscript>
+  </body>
+</html>

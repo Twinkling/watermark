@@ -1,0 +1,43 @@
+export function demoCanvas() {
+  const c = document.createElement("canvas");
+  c.width = 1600;
+  c.height = 1066;
+  const x = c.getContext("2d"),
+    g = x.createLinearGradient(0, 0, 1600, 1066);
+  g.addColorStop(0, "#f5eee6");
+  g.addColorStop(1, "#e5d0c0");
+  x.fillStyle = g;
+  x.fillRect(0, 0, 1600, 1066);
+  x.fillStyle = "#cc8566";
+  x.beginPath();
+  x.arc(1160, 280, 95, 0, Math.PI * 2);
+  x.fill();
+  x.fillStyle = "#c6aaa0";
+  x.beginPath();
+  x.moveTo(0, 790);
+  x.bezierCurveTo(300, 430, 610, 560, 900, 770);
+  x.bezierCurveTo(1150, 470, 1380, 500, 1600, 620);
+  x.lineTo(1600, 1066);
+  x.lineTo(0, 1066);
+  x.fill();
+  x.fillStyle = "#8b8296";
+  x.beginPath();
+  x.moveTo(0, 910);
+  x.bezierCurveTo(300, 650, 620, 720, 870, 880);
+  x.bezierCurveTo(1120, 1020, 1400, 680, 1600, 780);
+  x.lineTo(1600, 1066);
+  x.lineTo(0, 1066);
+  x.fill();
+  x.fillStyle = "#fcfaf7";
+  x.fillRect(130, 130, 720, 455);
+  x.fillStyle = "#484154";
+  x.font = "600 25px sans-serif";
+  x.fillText("L I T T L E   M O M E N T S", 185, 208);
+  x.font = '500 72px "PingFang SC", sans-serif';
+  x.fillText("留住生活的", 185, 325);
+  x.fillText("每一点美好。", 185, 420);
+  x.font = "20px sans-serif";
+  x.fillStyle = "#a196a1";
+  x.fillText("SLOW DOWN. LOOK AROUND.", 189, 520);
+  return c;
+}

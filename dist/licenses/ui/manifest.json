@@ -1,0 +1,442 @@
+[
+  {
+    "name": "@radix-ui/react-checkbox",
+    "version": "1.4.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-checkbox/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/primitive",
+    "version": "1.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__primitive/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-compose-refs",
+    "version": "1.1.5",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-compose-refs/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-context",
+    "version": "1.3.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-context/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-presence",
+    "version": "1.1.11",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-presence/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-layout-effect",
+    "version": "1.1.4",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-layout-effect/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-primitive",
+    "version": "2.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-primitive/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-slot",
+    "version": "1.5.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-slot/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-controllable-state",
+    "version": "1.3.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-controllable-state/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-effect-event",
+    "version": "0.0.5",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-effect-event/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-size",
+    "version": "1.1.5",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-size/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-collapsible",
+    "version": "1.2.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-collapsible/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-id",
+    "version": "1.1.4",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-id/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-dialog",
+    "version": "1.3.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-dialog/LICENSE"
+    ]
+  },
+  {
+    "name": "aria-hidden",
+    "version": "1.2.6",
+    "license": "MIT",
+    "files": [
+      "aria-hidden/LICENSE"
+    ]
+  },
+  {
+    "name": "tslib",
+    "version": "2.8.1",
+    "license": "0BSD",
+    "files": [
+      "tslib/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "react-remove-scroll",
+    "version": "2.7.2",
+    "license": "MIT",
+    "files": [
+      "react-remove-scroll/LICENSE"
+    ]
+  },
+  {
+    "name": "react-remove-scroll-bar",
+    "version": "2.3.8",
+    "license": "MIT",
+    "files": [
+      "react-remove-scroll-bar/LICENSE"
+    ]
+  },
+  {
+    "name": "react-style-singleton",
+    "version": "2.2.3",
+    "license": "MIT",
+    "files": [
+      "react-style-singleton/LICENSE"
+    ]
+  },
+  {
+    "name": "get-nonce",
+    "version": "1.0.1",
+    "license": "MIT",
+    "files": [
+      "get-nonce/LICENSE"
+    ]
+  },
+  {
+    "name": "use-callback-ref",
+    "version": "1.3.3",
+    "license": "MIT",
+    "files": [
+      "use-callback-ref/LICENSE"
+    ]
+  },
+  {
+    "name": "use-sidecar",
+    "version": "1.1.3",
+    "license": "MIT",
+    "files": [
+      "use-sidecar/LICENSE"
+    ]
+  },
+  {
+    "name": "detect-node-es",
+    "version": "1.1.0",
+    "license": "MIT",
+    "files": [
+      "detect-node-es/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-dismissable-layer",
+    "version": "1.2.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-dismissable-layer/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-callback-ref",
+    "version": "1.1.5",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-callback-ref/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-focus-guards",
+    "version": "1.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-focus-guards/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-focus-scope",
+    "version": "1.3.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-focus-scope/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-portal",
+    "version": "1.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-portal/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-popover",
+    "version": "1.3.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-popover/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-popper",
+    "version": "1.4.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-popper/LICENSE"
+    ]
+  },
+  {
+    "name": "@floating-ui/react-dom",
+    "version": "2.1.9",
+    "license": "MIT",
+    "files": [
+      "@floating-ui__react-dom/LICENSE"
+    ]
+  },
+  {
+    "name": "@floating-ui/dom",
+    "version": "1.8.0",
+    "license": "MIT",
+    "files": [
+      "@floating-ui__dom/LICENSE"
+    ]
+  },
+  {
+    "name": "@floating-ui/core",
+    "version": "1.8.0",
+    "license": "MIT",
+    "files": [
+      "@floating-ui__core/LICENSE"
+    ]
+  },
+  {
+    "name": "@floating-ui/utils",
+    "version": "0.2.12",
+    "license": "MIT",
+    "files": [
+      "@floating-ui__utils/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-arrow",
+    "version": "1.1.17",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-arrow/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-rect",
+    "version": "1.1.4",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-rect/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/rect",
+    "version": "1.1.3",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__rect/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-select",
+    "version": "2.4.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-select/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-collection",
+    "version": "1.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-collection/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/number",
+    "version": "1.1.3",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__number/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-direction",
+    "version": "1.2.0",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-direction/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-visually-hidden",
+    "version": "1.2.13",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-visually-hidden/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-slider",
+    "version": "1.6.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-slider/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-toggle",
+    "version": "1.2.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-toggle/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-toggle-group",
+    "version": "1.2.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-toggle-group/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-roving-focus",
+    "version": "1.2.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-roving-focus/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-use-is-hydrated",
+    "version": "0.1.3",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-use-is-hydrated/LICENSE"
+    ]
+  },
+  {
+    "name": "@radix-ui/react-tooltip",
+    "version": "1.4.1",
+    "license": "MIT",
+    "files": [
+      "@radix-ui__react-tooltip/LICENSE"
+    ]
+  },
+  {
+    "name": "class-variance-authority",
+    "version": "0.7.1",
+    "license": "Apache-2.0",
+    "files": [
+      "class-variance-authority/LICENSE"
+    ]
+  },
+  {
+    "name": "clsx",
+    "version": "2.1.1",
+    "license": "MIT",
+    "files": [
+      "clsx/license"
+    ]
+  },
+  {
+    "name": "lucide-react",
+    "version": "1.61.0",
+    "license": "ISC",
+    "files": [
+      "lucide-react/LICENSE"
+    ]
+  },
+  {
+    "name": "react",
+    "version": "19.3.1",
+    "license": "MIT",
+    "files": [
+      "react/LICENSE"
+    ]
+  },
+  {
+    "name": "react-dom",
+    "version": "19.3.1",
+    "license": "MIT",
+    "files": [
+      "react-dom/LICENSE"
+    ]
+  },
+  {
+    "name": "scheduler",
+    "version": "0.28.0",
+    "license": "MIT",
+    "files": [
+      "scheduler/LICENSE"
+    ]
+  },
+  {
+    "name": "tailwind-merge",
+    "version": "3.7.0",
+    "license": "MIT",
+    "files": [
+      "tailwind-merge/LICENSE.md"
+    ]
+  }
+]
