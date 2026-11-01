@@ -1,0 +1,7 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "personal-macos-path"
+description = "Personal macOS directory in public source"
+regex = '''/Users/[A-Za-z0-9_.-]+/(?:Projects|Downloads|Documents|Desktop|Library|\.config|\.codex)/'''

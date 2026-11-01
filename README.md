@@ -149,6 +149,8 @@ dist/留印.html             可单独使用的离线应用
 
 ## 来源与许可
 
+提交代码前，请按 [公开仓库隐私检查](docs/PRIVACY.md) 启用本地提交钩子与 GitHub 隐私邮箱。不要提交个人照片、真实签名、环境凭据、HAR 或控制台截图。
+
 视觉参考：[Photoroom 工具页](https://www.photoroom.com/tools) 的留白与黑白层次，以及 [Adobe Express 图片编辑页](https://www.adobe.com/express/feature/image/editor) 的中性背景与紫色强调。仅借鉴视觉原则，不复制代码、品牌标识或图片素材。主色 `#7160CD` 用于按钮、选中与焦点；示例图由本地 Canvas 绘制。
 
 React 管理表单与面板生命周期，shadcn/ui + Radix 处理基础组件、焦点与键盘行为，Lucide 统一图标，CSS 变量统一颜色、边框与主题。Canvas 渲染、HEIC / TIFF 解码继续复用现有实现；Vite 只在构建时运行，全部运行资源在本地。

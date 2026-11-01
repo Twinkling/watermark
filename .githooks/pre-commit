@@ -1,0 +1,35 @@
+#!/bin/sh
+set -eu
+
+# Commit metadata is public too. Do not echo the rejected address.
+for identity in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do
+  case "$(git var "$identity")" in
+    *'@users.noreply.github.com>'*) ;;
+    *) echo "提交已阻止：请为本仓库配置 GitHub 隐私邮箱。参见 docs/PRIVACY.md。" >&2; exit 1 ;;
+  esac
+done
+
+git diff --cached --name-only --diff-filter=ACMR -z | node -e '
+const fs = require("node:fs");
+const files = fs.readFileSync(0, "utf8").split("\0").filter(Boolean);
+const blocked = files.some(file =>
+  /(^|\/)(\.env(?:\..*)?|\.dev\.vars(?:\..*)?|\.npmrc|\.netrc)$/.test(file) ||
+  /\.(pem|key|p12|pfx|har)$/i.test(file) ||
+  /(^|\/)(test-results|\.wrangler|\.ssh|\.codex|\.claude)\//.test(file)
+);
+if (blocked) {
+  console.error("提交已阻止：暂存区包含凭据、环境文件或本机私有资料目录。");
+  process.exit(1);
+}
+'
+
+if command -v gitleaks >/dev/null 2>&1; then
+  scanner=gitleaks
+elif [ -x "$HOME/.local/bin/gitleaks" ]; then
+  scanner="$HOME/.local/bin/gitleaks"
+else
+  echo "提交已阻止：未找到 Gitleaks，请先安装后重试。参见 docs/PRIVACY.md。" >&2
+  exit 1
+fi
+
+exec "$scanner" git --pre-commit --staged --redact=100 --no-banner --no-color
