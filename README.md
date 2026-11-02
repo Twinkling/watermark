@@ -6,7 +6,7 @@
 
 ![留印图片编辑工作台](docs/preview-edit-v3.4.png)
 
-- 无账号、无统计脚本、无运行时 CDN；HEIC / TIFF 解码器与 12 款艺术字体随应用打包。
+- 无账号；图片处理、HEIC / TIFF 解码器与 12 款艺术字体均使用本站或离线包内资源。在线正式域名使用 GA4 统计访问，离线版不含统计脚本。
 - 多层水印、手写签名、整批默认与单张独立设置、可复用模板。
 - React + Vite + shadcn/ui / Radix + Canvas；只需静态托管，无后端或 Pages Functions。
 - 同时提供在线静态站点和构建后的单文件离线版本。在线首屏不预载完整字库或 HEIC/TIFF 解码器。
@@ -52,7 +52,7 @@ npm test       # 文档模型、格式、真实解码、ZIP 测试；ZIP 校验�
 | 构建输出目录 | `.pages-dist` |
 | 环境变量 | `NODE_VERSION=24` |
 
-构建时按 `package-lock.json` 安装依赖；无需 API Key、数据库或运行时环境变量。Pages 项目的「自定义域」添加 `watermark.huanxiong.site`，由 Cloudflare 创建指向该 Pages 项目的 CNAME 并签发 HTTPS 证书。当前 Pages 已设置 GitHub 来源与 `main` 生产分支，并启用自动部署开关。本次上线使用 Pages API 触发 Git 构建；后续推送的自动触发尚未验证，如未触发，请检查 Cloudflare Pages GitHub App 的仓库授权，并在 Pages 控制台重试部署。
+构建时按 `package-lock.json` 安装依赖；无需 API Key、数据库或运行时环境变量。GA4 的公开衡量 ID 和正式域名在 `analytics.config.json` 配置，仅注入 Pages 产物，不进入单文件离线版。Pages 项目的「自定义域」添加 `watermark.huanxiong.site`，由 Cloudflare 创建指向该 Pages 项目的 CNAME 并签发 HTTPS 证书。当前 Pages 已设置 GitHub 来源与 `main` 生产分支，并启用自动部署开关。本次上线使用 Pages API 触发 Git 构建；后续推送的自动触发尚未验证，如未触发，请检查 Cloudflare Pages GitHub App 的仓库授权，并在 Pages 控制台重试部署。
 
 本地检查部署产物：
 
@@ -108,7 +108,8 @@ npm test
 
 ## 处理边界
 
-- 原图不上传、不持久保存；无账号、统计脚本、远程字体或 CDN。刷新后清空原图与编辑会话。只有手动保存的模板写入当前浏览器 localStorage，包含相关 Logo、字体、签名笔迹和配置；可在模板面板删除。导出的模板文件也包含这些素材，但不包含原图。
+- 原图不上传、不持久保存；无账号，字体和图片解码不使用运行时 CDN。刷新后清空原图与编辑会话。只有手动保存的模板写入当前浏览器 localStorage，包含相关 Logo、字体、签名笔迹和配置；可在模板面板删除。导出的模板文件也包含这些素材，但不包含原图。
+- 在线正式域名在页面加载完成后的空闲时机加载 GA4（`G-R4K57LEBZ9`），使用 Cookie 统计访问、来源和设备等信息。关闭 Google Signals 与广告个性化，页面地址去掉查询参数和片段，来源只保留域名；不添加图片、文件名、水印文字、签名或模板内容的业务埋点。尊重浏览器 DNT / GPC；本地预览、Pages 预览域名及离线单文件不加载统计。GA4 数据流的增强型衡量设置由 Google Analytics 控制台管理，代码未增加自动表单或下载埋点。
 - 默认保留原始像素尺寸；裁剪、缩放和边框会改变输出尺寸，预览底部实时显示。PNG 和 WebP 支持透明背景，JPG 将透明区域填为白色。
 - 导出重新编码像素，不主动复制源图的 EXIF/GPS 元数据；不承诺保留原图色彩配置文件或打印 DPI。
 - 单批最多 40 张、单文件 50 MB、单图 32 百万像素、单边 16,384 像素、总图像 160 百万像素。ZIP 结果超过 512 MB 会提示分批处理。

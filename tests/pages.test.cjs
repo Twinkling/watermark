@@ -11,6 +11,15 @@ const output = path.join(root, '.pages-dist');
 const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
 const refs = [...html.matchAll(/(?:src|href)="(\/assets\/[^"?]+)"/g)].map(m => m[1]);
 
+test('Pages 产物带正式域名 GA4 配置及最小 CSP 放行，不静态加载远程脚本', () => {
+  const csp = html.match(/http-equiv="Content-Security-Policy"\s+content="([^"]+)"/)[1];
+  assert.match(csp, /connect-src https:\/\/\*\.google-analytics\.com https:\/\/www\.googletagmanager\.com/);
+  assert.doesNotMatch(csp, /unsafe-eval|doubleclick|connect-src \*/);
+  assert.match(html, /"measurementId":"G-R4K57LEBZ9","hostname":"watermark.huanxiong.site"/);
+  assert.doesNotMatch(html, /<script[^>]+src="https:/);
+  assert.ok(html.indexOf('window.WatermarkAnalyticsEnabled = true') < html.indexOf('window.WatermarkCore'));
+});
+
 test('Pages 首屏不下载字体二进制或特殊格式解码器，总资源小于 800 KB', () => {
   assert.equal(refs.length, 0, '冷启动不应再串行请求 JS / CSS');
   let bytes = Buffer.byteLength(html);

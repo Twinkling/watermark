@@ -360,7 +360,9 @@ export default function App() {
           <div className="inspector-footer">
             <HelpTip
               label="隐私说明"
-              text="图片只在本机处理，不上传。刷新会清空当前图片；手动保存的模板会留在此浏览器。"
+              text={window.WatermarkAnalyticsEnabled
+                ? "图片只在本机处理，不上传。在线版使用 Google Analytics 4 和 Cookie 统计访问，不发送图片或水印内容。刷新会清空当前图片；手动保存的模板会留在此浏览器。"
+                : "图片只在本机处理，不上传。刷新会清空当前图片；手动保存的模板会留在此浏览器。"}
             />
             <span>离线模式</span>
             <span>v3.4</span>

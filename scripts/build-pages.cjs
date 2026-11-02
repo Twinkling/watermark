@@ -51,6 +51,17 @@ let html = fs.readFileSync(path.join(output, "index.html"), "utf8")
 html = html.replace(/<link rel="stylesheet" href="([^"]+)"\s*\/>/g, (_, file) =>
   `<style>${fs.readFileSync(path.join(root, file), "utf8")}</style>`);
 const scripts = [];
+const analytics = JSON.parse(fs.readFileSync(path.join(root, "analytics.config.json"), "utf8"));
+if (!/^G-[A-Z0-9]+$/.test(analytics.measurementId) || !/^[a-z0-9.-]+$/.test(analytics.hostname))
+  throw new Error("GA4 衡量 ID 或正式域名无效");
+scripts.push(fs.readFileSync(path.join(root, "src/analytics.js"), "utf8")
+  .replace("/*__ANALYTICS_CONFIG__*/ null", JSON.stringify(analytics)));
+// Permit only the Google tag and Analytics endpoints in the online edition.
+// The offline edition retains connect-src 'none' and no remote scripts.
+html = html
+  .replace("script-src 'self' 'unsafe-inline'", "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com")
+  .replace("img-src 'self' data: blob:", "img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com")
+  .replace("connect-src 'none'", "connect-src https://*.google-analytics.com https://www.googletagmanager.com");
 html = html.replace(/<script src="([^"]+)" defer><\/script>/g, (_, file) => {
   const bytes = file.startsWith("/assets/")
     ? fs.readFileSync(path.join(output, file))
