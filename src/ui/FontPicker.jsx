@@ -35,7 +35,7 @@ function FontDialog({ layer, choose, onClose }) {
   return (
     <Modal
       title="选择字体"
-      tip={`${artFonts.length} 款免费商用字体，全部可离线使用。英文款不含中文字形。来源与完整授权在下方查看。`}
+      tip={`${artFonts.length} 款免费商用字体，在线版按需加载，离线版全部内置。英文款不含中文字形。来源与完整授权在下方查看。`}
       onClose={onClose}
       className="font-dialog"
     >
@@ -63,7 +63,7 @@ function FontDialog({ layer, choose, onClose }) {
               (font.category.startsWith("英文")
                 ? " · 中文使用系统字体回退"
                 : "") +
-              " · 免费商用 · 离线可用"
+              " · 免费商用 · 本地渲染"
             }
           >
             <button

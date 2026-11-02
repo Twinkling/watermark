@@ -2,6 +2,32 @@
 (function (root) {
   "use strict";
   const Formats = root.WatermarkFormats;
+  let codecLoading;
+  function ensureCodecs() {
+    if (root.WatermarkCodecSource) return Promise.resolve();
+    if (!root.WatermarkCodecURL)
+      return Promise.reject(new Error("本地解码器不可用，请使用完整离线文件"));
+    if (!codecLoading) {
+      codecLoading = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        let timer;
+        const finish = (error) => {
+          clearTimeout(timer);
+          script.remove();
+          error ? reject(error) : resolve();
+        };
+        script.src = root.WatermarkCodecURL;
+        script.onload = () => finish(root.WatermarkCodecSource ? null : new Error("解码器加载失败，请重试"));
+        script.onerror = () => finish(new Error("解码器下载失败，请检查网络后重试"));
+        timer = setTimeout(() => finish(new Error("解码器下载超时，请重试")), 30000);
+        document.head.appendChild(script);
+      }).catch((error) => {
+        codecLoading = null;
+        throw error;
+      });
+    }
+    return codecLoading;
+  }
   async function nativeDecode(blob, maxPixels) {
     if (typeof createImageBitmap === "function") {
       try {
@@ -44,8 +70,9 @@
     }
   }
   async function workerDecode(file, format, maxPixels) {
-    if (!root.WatermarkCodecSource || typeof Worker === "undefined")
+    if (typeof Worker === "undefined")
       throw new Error("本地解码器不可用，请使用完整离线文件或更新浏览器");
+    await ensureCodecs();
     const buffer = await file.arrayBuffer();
     const url = URL.createObjectURL(
       new Blob([root.WatermarkCodecSource], { type: "application/javascript" }),

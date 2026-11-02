@@ -9,7 +9,7 @@
 - 无账号、无统计脚本、无运行时 CDN；HEIC / TIFF 解码器与 12 款艺术字体随应用打包。
 - 多层水印、手写签名、整批默认与单张独立设置、可复用模板。
 - React + Vite + shadcn/ui / Radix + Canvas；只需静态托管，无后端或 Pages Functions。
-- 同时提供在线静态站点和构建后的单文件离线版本。
+- 同时提供在线静态站点和构建后的单文件离线版本。在线首屏不预载完整字库或 HEIC/TIFF 解码器。
 
 基于 [jzsn2018/offline-photo-watermark](https://github.com/jzsn2018/offline-photo-watermark) 的功能重实现与交互改版。保留浏览器本地处理和批量导出，增加多层水印、逐图编辑、图片处理和模板流程。参考 Watermark.ws 的照片编辑功能，自行实现本地 Canvas 渲染和工作台交互，不复制其代码、字体或付费素材。HEIC / HEIF 与 TIFF 解码器随应用打包，运行时不访问 CDN 或转换服务。
 
@@ -62,7 +62,7 @@ npm run build:pages
 npm test
 ```
 
-`.pages-dist/` 只包含运行资源、许可证和 404 页面，不发布测试、参考快照或开发目录。浏览器页面首次加载需要网络，加载完成后的图片处理无需上传或远程转换；需要可独立保存的离线版本请运行 `npm run build`，使用 `dist/留印.html`。
+`.pages-dist/` 只包含运行资源、许可证和 404 页面，不发布测试、参考快照或开发目录。在线版只在打开字体面板或导入需要备用解码器的 HEIC/TIFF 时下载本站静态资源，图片内容仍只在本机处理；尚未加载的字体或解码器需要网络，已加载资源可继续使用。需要可独立保存的离线版本请运行 `npm run build`，使用 `dist/留印.html`。
 
 离线单文件包含完整字体，约 26 MiB，超过 Pages 的 [25 MiB 单文件限制](https://developers.cloudflare.com/pages/platform/limits/#file-size)。因此 Pages 使用独立 HTML / JS / CSS 静态资源，离线单文件保留在仓库中，不上传到 Pages。构建脚本会检查各部署文件的大小。
 
