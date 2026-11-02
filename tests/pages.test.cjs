@@ -12,7 +12,7 @@ const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
 const refs = [...html.matchAll(/(?:src|href)="(\/assets\/[^"?]+)"/g)].map(m => m[1]);
 
 test('Pages 首屏不下载字体二进制或特殊格式解码器，总资源小于 800 KB', () => {
-  assert.ok(refs.length > 0);
+  assert.equal(refs.length, 0, '冷启动不应再串行请求 JS / CSS');
   let bytes = Buffer.byteLength(html);
   for (const ref of refs) {
     assert.match(ref, /\.[a-f0-9]{16}\.(js|css)$/);
@@ -26,9 +26,9 @@ test('Pages 首屏不下载字体二进制或特殊格式解码器，总资源�
 });
 
 test('在线字体目录的全部字库和许可完整，字节与离线源一致', () => {
-  const catalog = refs.find(ref => /\/fonts\./.test(ref));
+  const catalog = fs.readdirSync(path.join(output, 'assets')).find(file => /^fonts\./.test(file));
   const context = { window: {} };
-  vm.runInNewContext(fs.readFileSync(path.join(output, catalog), 'utf8'), context);
+  vm.runInNewContext(fs.readFileSync(path.join(output, 'assets', catalog), 'utf8'), context);
   const fonts = context.window.WatermarkFonts;
   assert.equal(fonts.length, 12);
   for (const font of fonts) {

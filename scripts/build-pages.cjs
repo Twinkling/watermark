@@ -39,9 +39,19 @@ const codecs = asset("codecs.js", fs.readFileSync(path.join(root, "vendor/codecs
 let html = fs.readFileSync(path.join(output, "index.html"), "utf8")
   .replace('<script src="vendor/codecs.js" defer></script>', `<script>window.WatermarkCodecURL = ${JSON.stringify(codecs)};</script>`)
   .replace('src="vendor/fonts.js"', `src="${fontCatalog}"`);
-// Every eager JS/CSS resource gets a content hash and can safely stay cached.
-html = html.replace(/(src|href)="((?:src|dist)\/[^"?]+|styles\.css)"/g, (_, attr, file) =>
-  `${attr}="${asset(path.basename(file), fs.readFileSync(path.join(root, file)))}"`);
+// Cold visits should not wait for another network round trip to start the editor.
+// Inline only the critical runtime; large fonts and codecs remain lazy assets.
+html = html.replace(/<link rel="stylesheet" href="([^"]+)"\s*\/>/g, (_, file) =>
+  `<style>${fs.readFileSync(path.join(root, file), "utf8")}</style>`);
+const scripts = [];
+html = html.replace(/<script src="([^"]+)" defer><\/script>/g, (_, file) => {
+  const bytes = file.startsWith("/assets/")
+    ? fs.readFileSync(path.join(output, file))
+    : fs.readFileSync(path.join(root, file));
+  scripts.push(bytes.toString().replace(/<\/script/gi, "<\\/script"));
+  return "";
+});
+html = html.replace("</body>", () => `<script>${scripts.join("\n;\n")}</script>\n</body>`);
 fs.writeFileSync(path.join(output, "index.html"), html);
 // Remove the unversioned copies; only the hashed runtime assets are published.
 for (const dir of ["src", "dist", "vendor"]) fs.rmSync(path.join(output, dir), { recursive: true, force: true });
