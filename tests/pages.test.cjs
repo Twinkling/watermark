@@ -36,6 +36,15 @@ test('在线字体目录的全部字库和许可完整，字节与离线源一�
     const bytes = fs.readFileSync(path.join(output, font.data));
     assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), font.sha256);
     assert.match(font.licenseText, /SIL OPEN FONT LICENSE/);
+    assert.match(font.preview.data, /^\/assets\/[^/]+\.preview\.[a-f0-9]{16}\.woff2$/);
+    const preview = fs.readFileSync(path.join(output, font.preview.data));
+    assert.equal(crypto.createHash('sha256').update(preview).digest('hex'), font.preview.sha256);
+    assert.equal(font.preview.text, font.sample);
+    assert.equal(font.preview.sourceSha256, font.sha256);
+    assert.notEqual(font.preview.data, font.data);
   }
+  const chinese = fonts.filter(font => font.category.startsWith('中文'));
+  assert.ok(chinese.reduce((sum, font) => sum + font.preview.bytes, 0) < 100 * 1024,
+    '打开中文字体面板的预览流量不应超过 100 KiB');
   assert.match(fs.readFileSync(path.join(output, '_headers'), 'utf8'), /\/assets\/\*\n  Cache-Control: public, max-age=31536000, immutable/);
 });

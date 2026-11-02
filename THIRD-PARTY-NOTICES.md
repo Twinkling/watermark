@@ -43,10 +43,12 @@ Radix UI Primitives、class-variance-authority、clsx、tailwind-merge 等运行
 | Sacramento / Sacramento | 英文 · 签名字体 | [原始字体](https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sacramento/Sacramento-Regular.ttf) · [OFL 1.1](https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sacramento/OFL.txt) |
 | Kalam / Kalam | 英文 · 手写 | [原始字体](https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/Kalam-Regular.ttf) · [OFL 1.1](https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/OFL.txt) |
 
-来源锁定于 Google Fonts 提交 `e7db6ca603fd4862010383ff17ffd6cc4ffac1c0`。完整字体、版权与许可证在 `vendor/fonts/`；源文件及随包文件的 SHA-256、字符数见 `manifest.json`。保持全部源字库字符，未按预览文案裁字。霞鹜文楷 TC 保留上游 TC 字形，包含简繁常用字；英文款的中文使用系统字体回退。
+来源锁定于 Google Fonts 提交 `e7db6ca603fd4862010383ff17ffd6cc4ffac1c0`。完整字体、版权与许可证在 `vendor/fonts/`；源文件及随包文件的 SHA-256、字符数见 `manifest.json`。用于实际水印的完整字体保留全部源字库字符。霞鹜文楷 TC 保留上游 TC 字形，包含简繁常用字；英文款的中文使用系统字体回退。
 
 Dancing Script 与 Sacramento 有保留字体名称，保持原始 TTF 字节不变。其余字体仅用 FontTools 4.60.1 转换为 WOFF2，未裁字或改绘字形。
 
-构建从本地文件生成 `vendor/fonts.js`，运行时不访问字体 CDN。单文件 HTML 内嵌完整字库及授权，可在“选择字体 → 字体来源与商用授权”查看；独立授权文件随发行物放在 `dist/licenses/fonts/`。字体按当前分类加载，应用或恢复模板会等待目标字体加载成功。模板记录稳定内置字体 ID；新增 6 款字体的模板需要 v3.3 或更新版本。
+在线版的字体卡片另用 `*.preview.woff2`，仅保留示例文案字形，由 FontTools 4.60.1 生成。所有预览字体的内部名称均改为 `LiuyinPreview-*`，保留版权与 OFL 许可；完整字体文件保持不变，用于实际水印与导出。生成脚本为 `scripts/font-previews.py`，普通构建直接使用已提交的预览文件并校验哈希与示例文案。
 
-重新获取同一来源：在独立 Python 环境安装 `fonttools[woff]==4.60.1`，运行 `python scripts/fetch-fonts.py`，再运行 `npm run build`。普通构建不访问网络。
+构建从本地文件生成 `vendor/fonts.js`，运行时不访问字体 CDN。单文件 HTML 内嵌完整字库及授权，可在“选择字体 → 字体来源与商用授权”查看；独立授权文件随发行物放在 `dist/licenses/fonts/`。在线版按当前分类加载小预览，应用或恢复模板会等待所选完整字体加载成功；离线版直接复用内嵌完整字体。模板记录稳定内置字体 ID；新增 6 款字体的模板需要 v3.3 或更新版本。
+
+重新获取同一来源：在独立 Python 环境安装 `fonttools[woff]==4.60.1`，运行 `python scripts/fetch-fonts.py` 和 `python scripts/font-previews.py`，再运行 `npm run build`。普通构建不访问网络。

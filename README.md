@@ -62,7 +62,7 @@ npm run build:pages
 npm test
 ```
 
-`.pages-dist/` 只包含运行资源、许可证和 404 页面，不发布测试、参考快照或开发目录。在线版只在打开字体面板或导入需要备用解码器的 HEIC/TIFF 时下载本站静态资源，图片内容仍只在本机处理；尚未加载的字体或解码器需要网络，已加载资源可继续使用。需要可独立保存的离线版本请运行 `npm run build`，使用 `dist/留印.html`。
+`.pages-dist/` 只包含运行资源、许可证和 404 页面，不发布测试、参考快照或开发目录。在线版打开字体面板时只下载示例文字的小字库，选中后才加载该款完整字体；导入需要备用解码器的 HEIC/TIFF 时按需下载本站静态资源，图片内容仍只在本机处理。尚未加载的字体或解码器需要网络，已加载资源可继续使用。需要可独立保存的离线版本请运行 `npm run build`，使用 `dist/留印.html`。
 
 离线单文件包含完整字体，约 26 MiB，超过 Pages 的 [25 MiB 单文件限制](https://developers.cloudflare.com/pages/platform/limits/#file-size)。因此 Pages 使用独立 HTML / JS / CSS 静态资源，离线单文件保留在仓库中，不上传到 Pages。构建脚本会检查各部署文件的大小。
 

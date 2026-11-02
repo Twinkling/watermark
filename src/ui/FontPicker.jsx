@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import { Modal, Button, Select, Segmented } from "./components.jsx";
 import Tooltip from "./Tooltip.jsx";
-import { artFonts, systemFonts, ensureArtFont } from "./fonts.js";
+import { artFonts, systemFonts, ensureArtFont, artFontPreviewFamily } from "./fonts.js";
 import * as A from "./store.js";
 
 function FontDialog({ layer, choose, onClose }) {
@@ -18,7 +18,7 @@ function FontDialog({ layer, choose, onClose }) {
   useEffect(() => {
     let active = true;
     for (const font of visible)
-      ensureArtFont(font.id)
+      ensureArtFont(font.id, true)
         .then(() => {
           if (active) setLoaded((v) => ({ ...v, [font.id]: true }));
         })
@@ -79,7 +79,7 @@ function FontDialog({ layer, choose, onClose }) {
               <span
                 className="art-font-sample"
                 style={{
-                  fontFamily: loaded[font.id] ? `"${font.id}"` : "inherit",
+                  fontFamily: loaded[font.id] ? `"${artFontPreviewFamily(font)}"` : "inherit",
                 }}
               >
                 {loaded[font.id]

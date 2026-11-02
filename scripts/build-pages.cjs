@@ -33,6 +33,13 @@ const fonts = catalog.fonts.map(font => ({
   ...font,
   licenseText: fs.readFileSync(path.join(root, "vendor/fonts", font.license), "utf8"),
   data: asset(font.file, fs.readFileSync(path.join(root, "vendor/fonts", font.file))),
+  preview: (() => {
+    const preview = font.preview;
+    const bytes = fs.readFileSync(path.join(root, "vendor/fonts", preview.file));
+    if (crypto.createHash("sha256").update(bytes).digest("hex") !== preview.sha256 || preview.text !== font.sample || preview.sourceSha256 !== font.sha256)
+      throw new Error("字体预览过期或校验失败，请重新运行 scripts/font-previews.py：" + font.id);
+    return { ...preview, data: asset(preview.file, bytes) };
+  })(),
 }));
 const fontCatalog = asset("fonts.js", Buffer.from("window.WatermarkFonts = " + JSON.stringify(fonts).replace(/<\/script/gi, "<\\/script") + ";\n"));
 const codecs = asset("codecs.js", fs.readFileSync(path.join(root, "vendor/codecs.js")));

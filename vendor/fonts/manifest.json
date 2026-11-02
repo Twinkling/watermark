@@ -15,7 +15,15 @@
       "sha256": "31563e1b1d107037b3ba46890fd4af7d0bb06d12dc87ab87a53c9757f7cb024a",
       "bytes": 3250464,
       "glyphs": 7015,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "mashanzheng.preview.woff2",
+        "sourceSha256": "31563e1b1d107037b3ba46890fd4af7d0bb06d12dc87ab87a53c9757f7cb024a",
+        "sha256": "abcb627db67e5b442b635dd48847ec3e418da264a9fd3d8fce9802215c166909",
+        "bytes": 3248,
+        "family": "LiuyinPreview-mashanzheng",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_longcang",
@@ -31,7 +39,15 @@
       "sha256": "d336bb4fbd8953dcd51f03789656306a49480e767fd8c78d53419deebfd24304",
       "bytes": 2944648,
       "glyphs": 7015,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "longcang.preview.woff2",
+        "sourceSha256": "d336bb4fbd8953dcd51f03789656306a49480e767fd8c78d53419deebfd24304",
+        "sha256": "18049ff5fa63a012bf5a4a7087818591ec65519a00fa0f874d45d7dd7d795cd5",
+        "bytes": 3368,
+        "family": "LiuyinPreview-longcang",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_zcoolkuaile",
@@ -47,7 +63,15 @@
       "sha256": "c6fc388b486afb363e00420540b56079561e4b46eba4c0d09a65b999bd0235e0",
       "bytes": 871928,
       "glyphs": 7053,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "zcoolkuaile.preview.woff2",
+        "sourceSha256": "c6fc388b486afb363e00420540b56079561e4b46eba4c0d09a65b999bd0235e0",
+        "sha256": "2701dec0d0bcf9f6dda119774e9ad1461d63a261ab0b33df49579e5f23faa712",
+        "bytes": 1372,
+        "family": "LiuyinPreview-zcoolkuaile",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_zhimangxing",
@@ -63,7 +87,15 @@
       "sha256": "900fa771d3824e82e730345ca3d456bdaf8aa7c768b82eb9fe38fb8d7ed338c4",
       "bytes": 2300636,
       "glyphs": 7015,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "zhimangxing.preview.woff2",
+        "sourceSha256": "900fa771d3824e82e730345ca3d456bdaf8aa7c768b82eb9fe38fb8d7ed338c4",
+        "sha256": "1001a5fd0d70e742a6006a25fa8adb7983b8885f58ab645d6c46cdfe798abbd2",
+        "bytes": 2740,
+        "family": "LiuyinPreview-zhimangxing",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_liujianmaocao",
@@ -79,7 +111,15 @@
       "sha256": "8fd21fe73e063d9e1e592878d65502af9eeee7ba4f6dc9fca9400062174a9bb7",
       "bytes": 2339684,
       "glyphs": 7015,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "liujianmaocao.preview.woff2",
+        "sourceSha256": "8fd21fe73e063d9e1e592878d65502af9eeee7ba4f6dc9fca9400062174a9bb7",
+        "sha256": "ebc3c1fba1645f79dbcc2fa3697745b8b0a0d3c4346f080258f27ebd49c8e835",
+        "bytes": 3044,
+        "family": "LiuyinPreview-liujianmaocao",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_lxgwwenkaitc",
@@ -95,7 +135,15 @@
       "sha256": "00c25eb83dd0b626c4be34dea1a5fd976bf5f39e8fb33c9eed97d8653bf26b4f",
       "bytes": 4921536,
       "glyphs": 22401,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "lxgwwenkaitc.preview.woff2",
+        "sourceSha256": "00c25eb83dd0b626c4be34dea1a5fd976bf5f39e8fb33c9eed97d8653bf26b4f",
+        "sha256": "706b5fabb2d12e4fb21c1ce36315862a46a94869f22a92f6f9af250cafa30e9e",
+        "bytes": 2696,
+        "family": "LiuyinPreview-lxgwwenkaitc",
+        "text": "留住美好时光"
+      }
     },
     {
       "id": "art_dancingscript",
@@ -111,7 +159,15 @@
       "sha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
       "bytes": 133636,
       "glyphs": 559,
-      "variable": true
+      "variable": true,
+      "preview": {
+        "file": "dancingscript.preview.woff2",
+        "sourceSha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
+        "sha256": "10a9ea95d50a48f0dffa0ea9e690456124baeb0a70d22763cb7b831d2553be1c",
+        "bytes": 5468,
+        "family": "LiuyinPreview-dancingscript",
+        "text": "Beautiful Moments"
+      }
     },
     {
       "id": "art_greatvibes",
@@ -127,7 +183,15 @@
       "sha256": "729a4f2fbe477c1c35150e9502e40b3fdeecca3f531a268e98a49aed9ef5ada1",
       "bytes": 162112,
       "glyphs": 1081,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "greatvibes.preview.woff2",
+        "sourceSha256": "729a4f2fbe477c1c35150e9502e40b3fdeecca3f531a268e98a49aed9ef5ada1",
+        "sha256": "93324d7c80b744a16611d7c4235b704bd7150726c23e239cf3f15247bae76626",
+        "bytes": 8340,
+        "family": "LiuyinPreview-greatvibes",
+        "text": "Beautiful Moments"
+      }
     },
     {
       "id": "art_caveat",
@@ -143,7 +207,15 @@
       "sha256": "c7d6a0ad1cbe120518b64ca8c5dac3c064bdfdb3cdc62f472c571f4a769ace9f",
       "bytes": 173468,
       "glyphs": 753,
-      "variable": true
+      "variable": true,
+      "preview": {
+        "file": "caveat.preview.woff2",
+        "sourceSha256": "c7d6a0ad1cbe120518b64ca8c5dac3c064bdfdb3cdc62f472c571f4a769ace9f",
+        "sha256": "9f6461a1e4fddf5252e5e30daa75e384075d825e046e47b070fbf8097f2036db",
+        "bytes": 13148,
+        "family": "LiuyinPreview-caveat",
+        "text": "Beautiful Moments"
+      }
     },
     {
       "id": "art_allura",
@@ -159,7 +231,15 @@
       "sha256": "2b39b5d5a9f0a75f83cb2c4419aa24ef6ec9e5a9364025be8e7257830dba6c90",
       "bytes": 87104,
       "glyphs": 587,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "allura.preview.woff2",
+        "sourceSha256": "2b39b5d5a9f0a75f83cb2c4419aa24ef6ec9e5a9364025be8e7257830dba6c90",
+        "sha256": "21107798bd0883a777ad586223f00bfa96c0a5c3ec5c5f10b3b0dcc7be27d0a0",
+        "bytes": 5000,
+        "family": "LiuyinPreview-allura",
+        "text": "Beautiful Moments"
+      }
     },
     {
       "id": "art_sacramento",
@@ -175,7 +255,15 @@
       "sha256": "9341fda10adbfeb7efc94302b34507a3e227d7e7f5c432df3f5ac8753ff73d24",
       "bytes": 79696,
       "glyphs": 370,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "sacramento.preview.woff2",
+        "sourceSha256": "9341fda10adbfeb7efc94302b34507a3e227d7e7f5c432df3f5ac8753ff73d24",
+        "sha256": "ddd14a789b15dbf6882b2297d5ae4cd80346b2d49475421544bea462d4c4f71e",
+        "bytes": 3928,
+        "family": "LiuyinPreview-sacramento",
+        "text": "Beautiful Moments"
+      }
     },
     {
       "id": "art_kalam",
@@ -191,7 +279,15 @@
       "sha256": "c9bbbfa207952e153182f72c9a484418ec717effad2413d559c3678eb130faca",
       "bytes": 137432,
       "glyphs": 1026,
-      "variable": false
+      "variable": false,
+      "preview": {
+        "file": "kalam.preview.woff2",
+        "sourceSha256": "c9bbbfa207952e153182f72c9a484418ec717effad2413d559c3678eb130faca",
+        "sha256": "8ab96050411b85cffd771436da893171acb8059c966e291418e37540890444a1",
+        "bytes": 4408,
+        "family": "LiuyinPreview-kalam",
+        "text": "Beautiful Moments"
+      }
     }
   ]
 }
